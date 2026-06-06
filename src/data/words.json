@@ -1,0 +1,26 @@
+[
+  {
+    "category": "Food",
+    "word": "Momo",
+    "hint": "Steam",
+    "icon": "restaurant"
+  },
+  {
+    "category": "Animal",
+    "word": "Cow",
+    "hint": "Sacred",
+    "icon": "pets"
+  },
+  {
+    "category": "Object",
+    "word": "Backpack",
+    "hint": "Carry",
+    "icon": "backpack"
+  },
+  {
+    "category": "Festival",
+    "word": "Dashain",
+    "hint": "Tika",
+    "icon": "celebration"
+  }
+]
