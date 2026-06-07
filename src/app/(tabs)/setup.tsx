@@ -21,8 +21,23 @@ export default function Setup() {
   const [focused, setFocused] = useState(false);
 
   const addPlayer = () => {
-    if (name.trim() === "") return;
-    setPlayers((prev) => [...prev, name.trim()]);
+    const trimmedName = name.trim();
+
+    if (trimmedName === "") return;
+
+    // Check for duplicate names (case insensitive)
+    const isDuplicate = players.some(
+      (player) => player.toLowerCase() === trimmedName.toLowerCase(),
+    );
+
+    if (isDuplicate) {
+      alert(
+        "Player with this name already exists! Please use a different name.",
+      );
+      return;
+    }
+
+    setPlayers((prev) => [...prev, trimmedName]);
     setName("");
   };
 
@@ -35,6 +50,14 @@ export default function Setup() {
       alert("Need at least 3 players to start!");
       return;
     }
+
+    // Final duplicate check before starting
+    const uniquePlayers = new Set(players.map((p) => p.toLowerCase()));
+    if (uniquePlayers.size !== players.length) {
+      alert("Duplicate player names found! Please remove duplicates.");
+      return;
+    }
+
     router.push({
       pathname: "/game",
       params: {
@@ -49,12 +72,8 @@ export default function Setup() {
   return (
     <View style={s.container}>
       {/* HEADER */}
-      <TouchableOpacity onPress={() => router.push("/")}>
-        <MaterialIcons
-          name="arrow-back-ios"
-          size={14}
-          color="#6C4FF6"
-        ></MaterialIcons>
+      <TouchableOpacity onPress={() => router.push("/")} style={s.backButton}>
+        <MaterialIcons name="arrow-back-ios" size={14} color="#6C4FF6" />
       </TouchableOpacity>
 
       <Text style={s.title}>Add Players</Text>
@@ -65,6 +84,7 @@ export default function Setup() {
           {category ? category.toUpperCase() : "SETUP"}
         </Text>
       </View>
+
       {/* INPUT ROW */}
       <View style={s.inputRow}>
         <TextInput

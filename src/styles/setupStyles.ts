@@ -7,7 +7,11 @@ const setupStyles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 30,
   },
-
+  backButton: {
+    alignSelf: "flex-start",
+    marginBottom: 16,
+    padding: 8,
+  },
   backBtn: {
     alignSelf: "flex-start",
     marginBottom: 20,

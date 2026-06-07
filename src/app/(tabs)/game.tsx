@@ -71,6 +71,9 @@ export default function GameScreen() {
   // ── ANIMATION ──
   const flipAnim = useRef(new Animated.Value(0)).current;
   const longPressTimer = useRef<NodeJS.Timeout | null>(null);
+  const initialImposters = params.imposters
+    ? JSON.parse(params.imposters as string)
+    : [];
 
   const categoryWords = words.filter(
     (item) => item.category === params.category,
@@ -139,19 +142,47 @@ export default function GameScreen() {
     outputRange: ["180deg", "360deg"],
   });
 
+  // Update the GameScreen useEffect for restart logic
   useEffect(() => {
-    if (imposters > maxImposters) setImposters(maxImposters);
-
-    if (isRestart) {
-      setShowCard(true);
-      setModalVisible(false);
+    if (params.isRestart === "true") {
       setCurrentIndex(0);
       setIsFlipped(false);
       setShowWord(false);
       flipAnim.setValue(0);
-    }
-  }, [maxImposters]);
+      setShowCard(true);
+      setModalVisible(false);
 
+      // Get the passed imposters from params
+      const passedImposters = params.imposters
+        ? JSON.parse(params.imposters as string)
+        : [];
+
+      // Set the imposter list
+      setImposterList(passedImposters);
+
+      // Set imposters count based on passed imposters length
+      setImposters(passedImposters.length);
+
+      // 🎯 WORD CHANGE LOGIC (same category, no repeat)
+      const usedWord = params.usedWord as string | undefined;
+
+      const availableWords = words.filter(
+        (w) => w.category === params.category && w.word !== usedWord,
+      );
+
+      // If no available words, reset the pool (use all words again)
+      let randomWord;
+      if (availableWords.length === 0) {
+        randomWord =
+          categoryWords[Math.floor(Math.random() * categoryWords.length)];
+      } else {
+        randomWord =
+          availableWords[Math.floor(Math.random() * availableWords.length)];
+      }
+
+      setSelectedWord(randomWord);
+    }
+  }, [params.isRestart]);
   // ── START GAME ──
   const startGame = () => {
     setModalVisible(false);
