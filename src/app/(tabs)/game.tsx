@@ -59,7 +59,6 @@ export default function GameScreen() {
 
   const [imposters, setImposters] = useState(1);
   const [imposterList, setImposterList] = useState<string[]>([]);
-  const [modalVisible, setModalVisible] = useState(true);
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showCard, setShowCard] = useState(false);
@@ -67,7 +66,8 @@ export default function GameScreen() {
   const [showWord, setShowWord] = useState(false);
 
   const [selectedWord, setSelectedWord] = useState<any>(null);
-
+  const isRestart = params.isRestart === "true";
+  const [modalVisible, setModalVisible] = useState(!isRestart);
   // ── ANIMATION ──
   const flipAnim = useRef(new Animated.Value(0)).current;
   const longPressTimer = useRef<NodeJS.Timeout | null>(null);
@@ -141,6 +141,15 @@ export default function GameScreen() {
 
   useEffect(() => {
     if (imposters > maxImposters) setImposters(maxImposters);
+
+    if (isRestart) {
+      setShowCard(true);
+      setModalVisible(false);
+      setCurrentIndex(0);
+      setIsFlipped(false);
+      setShowWord(false);
+      flipAnim.setValue(0);
+    }
   }, [maxImposters]);
 
   // ── START GAME ──
