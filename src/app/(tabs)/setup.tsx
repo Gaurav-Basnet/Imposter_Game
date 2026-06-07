@@ -3,11 +3,11 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useState } from "react";
 import {
-    FlatList,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
+  FlatList,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
 
 import s from "../../styles/setupStyles";
@@ -49,7 +49,7 @@ export default function Setup() {
   return (
     <View style={s.container}>
       {/* HEADER */}
-      <TouchableOpacity onPress={() => router.back()}>
+      <TouchableOpacity onPress={() => router.push("/")}>
         <MaterialIcons
           name="arrow-back-ios"
           size={14}
