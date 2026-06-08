@@ -40,6 +40,9 @@ export default function GameScreen() {
 
   const players = JSON.parse(params.players as string) as string[];
   const playerCount = players.length;
+  const intialPlayers = params.initialPlayers
+    ? JSON.parse(params.initialPlayers as string)
+    : [];
 
   // Generate random colors for each player (persists throughout game)
   const [playerColorMap] = useState(() => {
@@ -167,7 +170,7 @@ export default function GameScreen() {
       const usedWord = params.usedWord as string | undefined;
 
       const availableWords = words.filter(
-        (w) => w.category === params.category && w.word !== usedWord,
+        (w) => w.category === params.category && w.word == usedWord,
       );
 
       // If no available words, reset the pool (use all words again)
@@ -215,10 +218,16 @@ export default function GameScreen() {
         params: {
           players: JSON.stringify(players),
           imposters: JSON.stringify(imposterList),
+          initialPlayers: JSON.stringify(
+            params.initialPlayers
+              ? JSON.parse(params.initialPlayers as string)
+              : [],
+          ), // ✅ Pass initial players for restart
           word: selectedWord?.word,
           category: params.category,
         },
       });
+      console.log("initial Players", intialPlayers);
     }
   };
 

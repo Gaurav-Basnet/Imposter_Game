@@ -136,64 +136,10 @@ const setupStyles = StyleSheet.create({
     marginBottom: 16,
   },
 
-  playerCard: {
-    backgroundColor: "#FFFFFF",
-    borderRadius: 16,
-    borderWidth: 1.5,
-    borderColor: "#EAE7F8",
-    paddingVertical: 14,
-    paddingHorizontal: 16,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    marginBottom: 10,
-    shadowColor: "#C4BBEE",
-    shadowOpacity: 0.15,
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 6,
-    elevation: 2,
-  },
-
   playerLeft: {
     flexDirection: "row",
     alignItems: "center",
     gap: 12,
-  },
-
-  playerAvatar: {
-    width: 36,
-    height: 36,
-    borderRadius: 11,
-    backgroundColor: "#EDE9FE",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
-  playerAvatarText: {
-    fontSize: 14,
-    fontWeight: "700",
-    color: "#6C4FF6",
-  },
-
-  playerName: {
-    fontSize: 15,
-    fontWeight: "600",
-    color: "#1A1535",
-  },
-
-  removeBtn: {
-    backgroundColor: "#FFF0F3",
-    borderWidth: 1,
-    borderColor: "#FECDD6",
-    borderRadius: 10,
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-  },
-
-  removeText: {
-    fontSize: 12,
-    fontWeight: "600",
-    color: "#FF4D6A",
   },
 
   emptyState: {
@@ -278,6 +224,143 @@ const setupStyles = StyleSheet.create({
   counterBold: {
     color: "#6C4FF6",
     fontWeight: "700",
+  },
+  // Add these to your existing styles object
+
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    justifyContent: "flex-end",
+    alignItems: "center",
+  },
+
+  modalContent: {
+    backgroundColor: "#fff",
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
+    width: "100%",
+    maxHeight: "80%",
+    paddingHorizontal: 20,
+    paddingTop: 20,
+    paddingBottom: 30,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: -2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+
+  modalHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 20,
+    paddingBottom: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: "#f0f0f0",
+  },
+
+  modalTitle: {
+    fontSize: 20,
+    fontWeight: "600",
+    color: "#333",
+    letterSpacing: 0.5,
+  },
+
+  modalCloseBtn: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: "#f5f5f5",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  categoryItem: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingVertical: 16,
+    paddingHorizontal: 12,
+    borderRadius: 12,
+    marginBottom: 8,
+    backgroundColor: "#f8f9fa",
+  },
+
+  categoryItemSelected: {
+    backgroundColor: "#f0ebff",
+    borderWidth: 1,
+    borderColor: "#6C4FF6",
+  },
+
+  categoryItemText: {
+    fontSize: 16,
+    fontWeight: "500",
+    color: "#555",
+    letterSpacing: 0.5,
+  },
+
+  categoryItemTextSelected: {
+    color: "#6C4FF6",
+    fontWeight: "600",
+  },
+
+  // Player card styles (updated)
+  playerCard: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#fff",
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    borderRadius: 12,
+    marginBottom: 8,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+    elevation: 2,
+  },
+
+  playerAvatar: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: "#6C4FF6",
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: 12,
+  },
+
+  playerAvatarText: {
+    color: "#fff",
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+
+  playerName: {
+    flex: 1,
+    fontSize: 16,
+    fontWeight: "500",
+    color: "#333",
+  },
+
+  removeBtn: {
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 8,
+    backgroundColor: "#fee",
+  },
+
+  removeText: {
+    color: "#ff4444",
+    fontSize: 14,
+    fontWeight: "500",
   },
 });
 

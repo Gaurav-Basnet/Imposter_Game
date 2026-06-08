@@ -1,39 +1,54 @@
-import { Colors } from "@/constants/theme";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useState } from "react";
 import {
   FlatList,
+  Modal,
   Text,
   TextInput,
   TouchableOpacity,
   View,
 } from "react-native";
 
+import words from "../../data/words.json";
 import s from "../../styles/setupStyles";
 
 export default function Setup() {
   const router = useRouter();
-  const { category } = useLocalSearchParams<{ category?: string }>();
+  const params = useLocalSearchParams();
+
+  const routeCategory = params.category as string | undefined;
+
+  // ✅ NEW: editable category state
+  const [selectedCategory, setSelectedCategory] = useState(routeCategory ?? "");
+
+  const [showCategoryModal, setShowCategoryModal] = useState(false);
+
+  const previousPlayers = params.initialPlayers
+    ? JSON.parse(params.initialPlayers as string)
+    : [];
 
   const [name, setName] = useState("");
-  const [players, setPlayers] = useState<string[]>([]);
+  const [players, setPlayers] = useState<string[]>(() => {
+    if (previousPlayers.length > 0) return previousPlayers;
+    return [];
+  });
+
   const [focused, setFocused] = useState(false);
+
+  // example categories (you can replace with your JSON list)
+  const categories = Array.from(new Set(words.map((w) => w.category)));
 
   const addPlayer = () => {
     const trimmedName = name.trim();
-
     if (trimmedName === "") return;
 
-    // Check for duplicate names (case insensitive)
     const isDuplicate = players.some(
-      (player) => player.toLowerCase() === trimmedName.toLowerCase(),
+      (p) => p.toLowerCase() === trimmedName.toLowerCase(),
     );
 
     if (isDuplicate) {
-      alert(
-        "Player with this name already exists! Please use a different name.",
-      );
+      alert("Player already exists!");
       return;
     }
 
@@ -47,22 +62,16 @@ export default function Setup() {
 
   const startGame = () => {
     if (players.length < 3) {
-      alert("Need at least 3 players to start!");
+      alert("Need at least 3 players!");
       return;
     }
 
-    // Final duplicate check before starting
-    const uniquePlayers = new Set(players.map((p) => p.toLowerCase()));
-    if (uniquePlayers.size !== players.length) {
-      alert("Duplicate player names found! Please remove duplicates.");
-      return;
-    }
-
-    router.push({
+    router.replace({
       pathname: "/game",
       params: {
         players: JSON.stringify(players),
-        category,
+        initialPlayers: JSON.stringify(players), // ✅ Pass initial players for restart
+        category: selectedCategory, // ✅ IMPORTANT FIX
       },
     });
   };
@@ -79,79 +88,108 @@ export default function Setup() {
       <Text style={s.title}>Add Players</Text>
       <Text style={s.subtitle}>Minimum 3 players to start the game</Text>
 
-      <View style={s.badge}>
+      {/* ✅ CATEGORY BOX (CLICKABLE) */}
+      <TouchableOpacity
+        onPress={() => setShowCategoryModal(true)}
+        style={s.badge}
+        activeOpacity={0.7}
+      >
         <Text style={s.badgeText}>
-          {category ? category.toUpperCase() : "SETUP"}
+          {selectedCategory
+            ? selectedCategory.toUpperCase()
+            : "SELECT CATEGORY"}
         </Text>
-      </View>
+        <MaterialIcons
+          name="arrow-drop-down"
+          size={20}
+          color="#6C4FF6"
+          style={{ marginLeft: 8 }}
+        />
+      </TouchableOpacity>
 
-      {/* INPUT ROW */}
+      {/* CATEGORY MODAL - MODERN STYLED */}
+      <Modal
+        visible={showCategoryModal}
+        transparent
+        animationType="slide"
+        onRequestClose={() => setShowCategoryModal(false)}
+      >
+        <View style={s.modalOverlay}>
+          <View style={s.modalContent}>
+            <View style={s.modalHeader}>
+              <Text style={s.modalTitle}>Choose Category</Text>
+              <TouchableOpacity
+                onPress={() => setShowCategoryModal(false)}
+                style={s.modalCloseBtn}
+              >
+                <MaterialIcons name="close" size={24} color="#666" />
+              </TouchableOpacity>
+            </View>
+
+            <FlatList
+              data={categories}
+              keyExtractor={(item) => item}
+              showsVerticalScrollIndicator={false}
+              renderItem={({ item }) => (
+                <TouchableOpacity
+                  style={[
+                    s.categoryItem,
+                    selectedCategory === item && s.categoryItemSelected,
+                  ]}
+                  onPress={() => {
+                    setSelectedCategory(item);
+                    setShowCategoryModal(false);
+                  }}
+                >
+                  <Text
+                    style={[
+                      s.categoryItemText,
+                      selectedCategory === item && s.categoryItemTextSelected,
+                    ]}
+                  >
+                    {item.toUpperCase()}
+                  </Text>
+                  {selectedCategory === item && (
+                    <MaterialIcons name="check" size={20} color="#6C4FF6" />
+                  )}
+                </TouchableOpacity>
+              )}
+            />
+          </View>
+        </View>
+      </Modal>
+
+      {/* INPUT */}
       <View style={s.inputRow}>
         <TextInput
           value={name}
           style={[s.input, focused && s.inputFocused]}
           placeholder="Enter player name…"
           onChangeText={setName}
-          placeholderTextColor={Colors.muted}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
           onSubmitEditing={addPlayer}
-          returnKeyType="done"
         />
-        <TouchableOpacity
-          style={s.addBtn}
-          onPress={addPlayer}
-          activeOpacity={0.8}
-        >
+        <TouchableOpacity style={s.addBtn} onPress={addPlayer}>
           <Text style={s.addBtnText}>+</Text>
         </TouchableOpacity>
       </View>
 
-      {/* COUNTER */}
-      {players.length > 0 && (
-        <View style={s.counterPill}>
-          <View style={s.counterDot} />
-          <Text style={s.counterText}>
-            <Text style={s.counterBold}>{players.length}</Text> player
-            {players.length !== 1 ? "s" : ""} added
-            {players.length < 3
-              ? ` · need ${3 - players.length} more`
-              : " · ready to play!"}
-          </Text>
-        </View>
-      )}
-
-      {/* SECTION LABEL */}
-      {players.length > 0 && <Text style={s.sectionLabel}>PLAYERS</Text>}
-
       {/* PLAYER LIST */}
       <FlatList
         data={players}
-        style={s.playerList}
-        keyExtractor={(_, index) => index.toString()}
-        showsVerticalScrollIndicator={false}
-        ListEmptyComponent={
-          <View style={s.emptyState}>
-            <Text style={s.emptyIcon}>👥</Text>
-            <Text style={s.emptyText}>No players yet</Text>
-            <Text style={s.emptySubtext}>Type a name above to get started</Text>
-          </View>
-        }
+        keyExtractor={(_, i) => i.toString()}
         renderItem={({ item, index }) => (
           <View style={s.playerCard}>
-            <View style={s.playerLeft}>
-              <View style={s.playerAvatar}>
-                <Text style={s.playerAvatarText}>
-                  {item.charAt(0).toUpperCase()}
-                </Text>
-              </View>
-              <Text style={s.playerName}>{item}</Text>
+            <View style={s.playerAvatar}>
+              <Text style={s.playerAvatarText}>
+                {item.charAt(0).toUpperCase()}
+              </Text>
             </View>
-
+            <Text style={s.playerName}>{item}</Text>
             <TouchableOpacity
-              style={s.removeBtn}
               onPress={() => removePlayer(index)}
-              activeOpacity={0.7}
+              style={s.removeBtn}
             >
               <Text style={s.removeText}>Remove</Text>
             </TouchableOpacity>
@@ -159,17 +197,14 @@ export default function Setup() {
         )}
       />
 
-      {/* START BUTTON */}
+      {/* START */}
       <TouchableOpacity
         style={[s.startBtn, !canStart && s.startBtnDisabled]}
         onPress={startGame}
-        activeOpacity={0.85}
         disabled={!canStart}
       >
         <Text style={s.startText}>
-          {canStart
-            ? "Start Game →"
-            : `Need ${3 - players.length} more player${3 - players.length !== 1 ? "s" : ""}`}
+          {canStart ? "Start Game →" : "Need more players"}
         </Text>
       </TouchableOpacity>
     </View>

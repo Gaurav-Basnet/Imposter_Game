@@ -6,7 +6,9 @@ import styles from "../../styles/votingStyles";
 export default function VotingScreen() {
   const params = useLocalSearchParams();
   const router = useRouter();
-
+  const intialPlayers = params.initialPlayers
+    ? JSON.parse(params.initialPlayers as string)
+    : [];
   const players = JSON.parse(params.players as string) as string[];
   const imposters = JSON.parse(params.imposters as string) as string[];
   const category = params.category as string;
@@ -107,8 +109,10 @@ export default function VotingScreen() {
       pathname: "/game",
       params: {
         players: JSON.stringify(updatedPlayers),
+        initialPlayers: JSON.stringify(intialPlayers),
         category,
         isRestart: "true",
+
         usedWord: word,
         imposters: JSON.stringify(updatedImposters),
       },
@@ -333,7 +337,18 @@ export default function VotingScreen() {
         {(gameResult === "crew" || gameResult === "imposter") && (
           <TouchableOpacity
             style={styles.playAgainBtn}
-            onPress={() => router.replace("/")}
+            onPress={() =>
+              router.replace({
+                pathname: "/setup",
+                params: {
+                  players: JSON.stringify(intialPlayers),
+                  category,
+                  isRestart: "true",
+                  initialPlayers: JSON.stringify(intialPlayers),
+                  usedWord: word,
+                },
+              })
+            }
             activeOpacity={0.8}
           >
             <Text style={styles.playAgainText}>Play Again →</Text>
