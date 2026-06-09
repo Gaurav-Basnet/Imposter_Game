@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
     color: "#1A1535",
     textAlign: "center",
     marginTop: 40,
+
     letterSpacing: -1,
   },
 

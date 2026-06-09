@@ -42,6 +42,25 @@ const styles = StyleSheet.create({
     borderColor: Colors.cardBorder,
   },
 
+  categoryContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 6,
+    marginTop: 8,
+    paddingHorizontal: 12,
+    paddingVertical: 4,
+    backgroundColor: "#F0EBFF",
+    borderRadius: 16,
+    alignSelf: "center",
+  },
+
+  categoryText: {
+    fontSize: 12,
+    fontWeight: "600",
+    color: "#6C4FF6",
+    letterSpacing: 0.5,
+  },
   modalIconWrap: {
     width: 70,
     height: 70,

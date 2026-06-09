@@ -1,3 +1,4 @@
+import { MaterialIcons } from "@expo/vector-icons";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useRef, useState } from "react";
 import {
@@ -8,7 +9,6 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-
 import words from "../../data/words.json";
 import styles from "../../styles/gameStyles";
 
@@ -332,6 +332,12 @@ export default function GameScreen() {
           <Text style={styles.stepLabel}>
             Player {currentPlayerNumber} of {totalPlayers}
           </Text>
+          <View style={styles.categoryContainer}>
+            <MaterialIcons name="category" size={16} color="#6C4FF6" />
+            <Text style={styles.categoryText}>
+              {params.category?.toUpperCase()}
+            </Text>
+          </View>
 
           <View style={styles.nameContainer}>
             <View

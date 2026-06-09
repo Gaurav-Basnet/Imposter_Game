@@ -1,5 +1,6 @@
 import { MaterialIcons } from "@expo/vector-icons";
 import { useLocalSearchParams, useRouter } from "expo-router";
+
 import { useState } from "react";
 import {
   FlatList,
@@ -66,7 +67,7 @@ export default function Setup() {
       return;
     }
 
-    router.replace({
+    router.push({
       pathname: "/game",
       params: {
         players: JSON.stringify(players),
@@ -94,17 +95,14 @@ export default function Setup() {
         style={s.badge}
         activeOpacity={0.7}
       >
-        <Text style={s.badgeText}>
-          {selectedCategory
-            ? selectedCategory.toUpperCase()
-            : "SELECT CATEGORY"}
-        </Text>
-        <MaterialIcons
-          name="arrow-drop-down"
-          size={20}
-          color="#6C4FF6"
-          style={{ marginLeft: 8 }}
-        />
+        <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
+          <Text style={s.badgeText}>
+            {selectedCategory
+              ? selectedCategory.toUpperCase()
+              : "SELECT CATEGORY"}
+          </Text>
+          <MaterialIcons name="arrow-drop-down" size={20} color="#6C4FF6" />
+        </View>
       </TouchableOpacity>
 
       {/* CATEGORY MODAL - MODERN STYLED */}

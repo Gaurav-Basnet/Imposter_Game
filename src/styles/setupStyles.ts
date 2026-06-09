@@ -49,10 +49,10 @@ const setupStyles = StyleSheet.create({
   },
 
   badgeText: {
-    fontSize: 10,
+    fontSize: 20,
     fontWeight: "800",
     color: "#6C4FF6",
-    letterSpacing: 2,
+    letterSpacing: 6,
   },
 
   title: {
@@ -60,7 +60,7 @@ const setupStyles = StyleSheet.create({
     fontWeight: "800",
     color: "#1A1535",
     textAlign: "center",
-    letterSpacing: -0.8,
+    letterSpacing: 2,
     marginBottom: 4,
   },
 

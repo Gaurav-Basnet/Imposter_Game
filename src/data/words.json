@@ -2,20 +2,236 @@
   {
     "category": "Food",
     "word": "Momo",
-    "hint": "Steam",
+    "hint": "Bafayeko",
     "icon": "restaurant"
   },
   {
+    "category": "Food",
+    "word": "Dal",
+    "hint": "Gedaqudi",
+    "icon": "soup_kitchen"
+  },
+  { "category": "Food", "word": "Bhat", "hint": "Chawal", "icon": "rice_bowl" },
+  {
+    "category": "Food",
+    "word": "Roti",
+    "hint": "Atta",
+    "icon": "breakfast_dining"
+  },
+  { "category": "Food", "word": "Gundruk", "hint": "Saag", "icon": "eco" },
+  { "category": "Food", "word": "Dhido", "hint": "Kodo", "icon": "grain" },
+  {
+    "category": "Food",
+    "word": "Selroti",
+    "hint": "Golo Dulo",
+    "icon": "donut_large"
+  },
+  { "category": "Food", "word": "Chiura", "hint": "Kuteko", "icon": "grain" },
+  {
+    "category": "Food",
+    "word": "Thukpa",
+    "hint": "Chauchau",
+    "icon": "ramen_dining"
+  },
+  { "category": "Food", "word": "Yomari", "hint": "Chaku", "icon": "cake" },
+  {
+    "category": "Food",
+    "word": "Chatamari",
+    "hint": "Newari",
+    "icon": "local_pizza"
+  },
+  {
+    "category": "Food",
+    "word": "Kwati",
+    "hint": "Janai-Purnima",
+    "icon": "soup_kitchen"
+  },
+  { "category": "Food", "word": "Achar", "hint": "Amilo", "icon": "set_meal" },
+  { "category": "Food", "word": "Sikarni", "hint": "Dahi", "icon": "icecream" },
+  {
+    "category": "Food",
+    "word": "Jujudahi",
+    "hint": "Bhaktapur",
+    "icon": "local_cafe"
+  },
+  { "category": "Food", "word": "Chhurpi", "hint": "Garo", "icon": "cookie" },
+  {
+    "category": "Food",
+    "word": "Sukuti",
+    "hint": "Sukeko",
+    "icon": "kebab_dining"
+  },
+  {
+    "category": "Food",
+    "word": "Alu",
+    "hint": "Tarkari",
+    "icon": "baking_goods"
+  },
+  { "category": "Food", "word": "Tama", "hint": "Bans", "icon": "grass" },
+  {
+    "category": "Food",
+    "word": "Puri",
+    "hint": "Tel",
+    "icon": "dinner_dining"
+  },
+  { "category": "Animal", "word": "Gai", "hint": "Pavitra", "icon": "pets" },
+  { "category": "Animal", "word": "Chauri", "hint": "Himal", "icon": "pets" },
+  {
     "category": "Animal",
-    "word": "Cow",
-    "hint": "Sacred",
-    "icon": "pets"
+    "word": "Chituwa",
+    "hint": "Phurti",
+    "icon": "cruelty_free"
+  },
+  {
+    "category": "Animal",
+    "word": "Gaida",
+    "hint": "Khag",
+    "icon": "cruelty_free"
+  },
+  {
+    "category": "Animal",
+    "word": "Hatti",
+    "hint": "Sunda",
+    "icon": "cruelty_free"
+  },
+  {
+    "category": "Animal",
+    "word": "Bander",
+    "hint": "Rukh",
+    "icon": "cruelty_free"
+  },
+  {
+    "category": "Animal",
+    "word": "Mayur",
+    "hint": "Pankh",
+    "icon": "flutter_dash"
+  },
+  {
+    "category": "Animal",
+    "word": "Danphe",
+    "hint": "Rastriya",
+    "icon": "flutter_dash"
+  },
+  {
+    "category": "Animal",
+    "word": "Baagh",
+    "hint": "Dharake",
+    "icon": "cruelty_free"
+  },
+  { "category": "Animal", "word": "Goh", "hint": "Nadi", "icon": "water" },
+  {
+    "category": "Animal",
+    "word": "Kasturi",
+    "hint": "Basna",
+    "icon": "cruelty_free"
+  },
+  {
+    "category": "Animal",
+    "word": "Habre",
+    "hint": "Rato",
+    "icon": "cruelty_free"
+  },
+  { "category": "Animal", "word": "Munal", "hint": "Chara", "icon": "bento" },
+  { "category": "Animal", "word": "Bhalu", "hint": "Jhabre", "icon": "pets" },
+  { "category": "Animal", "word": "Ghoral", "hint": "Pahad", "icon": "pets" },
+  {
+    "category": "Object",
+    "word": "Khukuri",
+    "hint": "Dharilo",
+    "icon": "hardware"
+  },
+  { "category": "Object", "word": "Dhaka", "hint": "Bunaiko", "icon": "style" },
+  {
+    "category": "Object",
+    "word": "Thangka",
+    "hint": "Chitrakala",
+    "icon": "image"
+  },
+  { "category": "Object", "word": "Topi", "hint": "Sir", "icon": "checkroom" },
+  {
+    "category": "Object",
+    "word": "Dhyangro",
+    "hint": "Dhami",
+    "icon": "music_note"
   },
   {
     "category": "Object",
-    "word": "Backpack",
-    "hint": "Carry",
+    "word": "Bhari",
+    "hint": "Namlo",
     "icon": "backpack"
+  },
+  {
+    "category": "Object",
+    "word": "Doko",
+    "hint": "Choya",
+    "icon": "shopping_basket"
+  },
+  {
+    "category": "Object",
+    "word": "Naumati",
+    "hint": "Panche",
+    "icon": "music_note"
+  },
+  {
+    "category": "Object",
+    "word": "Sarangi",
+    "hint": "Gaine",
+    "icon": "queue_music"
+  },
+  {
+    "category": "Object",
+    "word": "Madal",
+    "hint": "Taal",
+    "icon": "music_note"
+  },
+  {
+    "category": "Object",
+    "word": "Mandala",
+    "hint": "Golo",
+    "icon": "trip_origin"
+  },
+  {
+    "category": "Object",
+    "word": "Rudraksha",
+    "hint": "Mala",
+    "icon": "blur_circular"
+  },
+  {
+    "category": "Object",
+    "word": "Pashmina",
+    "hint": "Chyangra",
+    "icon": "checkroom"
+  },
+  {
+    "category": "Object",
+    "word": "Dhup",
+    "hint": "Pooja",
+    "icon": "local_fire_department"
+  },
+  { "category": "Object", "word": "Paubha", "hint": "Purano", "icon": "image" },
+  {
+    "category": "Object",
+    "word": "Gagri",
+    "hint": "Paani",
+    "icon": "wine_bar"
+  },
+  {
+    "category": "Object",
+    "word": "Karuwa",
+    "hint": "Tamba",
+    "icon": "local_drink"
+  },
+  {
+    "category": "Object",
+    "word": "Diyo",
+    "hint": "Batti",
+    "icon": "lightbulb"
+  },
+  {
+    "category": "Object",
+    "word": "Hukka",
+    "hint": "Dhuwa",
+    "icon": "plumbing"
   },
   {
     "category": "Festival",
@@ -25,8 +241,337 @@
   },
   {
     "category": "Festival",
-    "word": "tihar",
-    "hint": "Tika",
+    "word": "Tihar",
+    "hint": "Deusi",
     "icon": "celebration"
-  }
+  },
+  { "category": "Festival", "word": "Holi", "hint": "Rang", "icon": "palette" },
+  {
+    "category": "Festival",
+    "word": "Teej",
+    "hint": "Brata",
+    "icon": "celebration"
+  },
+  {
+    "category": "Festival",
+    "word": "Bisket",
+    "hint": "Rath",
+    "icon": "celebration"
+  },
+  {
+    "category": "Festival",
+    "word": "Maghe",
+    "hint": "Sakrati",
+    "icon": "ac_unit"
+  },
+  {
+    "category": "Festival",
+    "word": "Indrajatra",
+    "hint": "Kumari",
+    "icon": "celebration"
+  },
+  {
+    "category": "Festival",
+    "word": "Losar",
+    "hint": "Sherpa",
+    "icon": "celebration"
+  },
+  {
+    "category": "Festival",
+    "word": "Buddha-Jayanti",
+    "hint": "Gautam",
+    "icon": "self_improvement"
+  },
+  {
+    "category": "Festival",
+    "word": "Machhindranath",
+    "hint": "Lalitpur",
+    "icon": "celebration"
+  },
+  {
+    "category": "Festival",
+    "word": "Gaijatra",
+    "hint": "Hasaune",
+    "icon": "celebration"
+  },
+  {
+    "category": "Festival",
+    "word": "Shivaratri",
+    "hint": "Pashupati",
+    "icon": "nights_stay"
+  },
+  {
+    "category": "Festival",
+    "word": "Chhath",
+    "hint": "Surya",
+    "icon": "wb_sunny"
+  },
+  {
+    "category": "Festival",
+    "word": "Ubhauli",
+    "hint": "Sakela",
+    "icon": "agriculture"
+  },
+  {
+    "category": "Festival",
+    "word": "Ghodejatra",
+    "hint": "Tundikhel",
+    "icon": "bedroom_baby"
+  },
+  {
+    "category": "Sports",
+    "word": "Cricket",
+    "hint": "Bat",
+    "icon": "sports-soccer"
+  },
+  {
+    "category": "Sports",
+    "word": "Football",
+    "hint": "Choruko",
+    "icon": "sports_soccer"
+  },
+  {
+    "category": "Sports",
+    "word": "Volleyball",
+    "hint": "Jali",
+    "icon": "sports_volleyball"
+  },
+  {
+    "category": "Sports",
+    "word": "Kabaddi",
+    "hint": "Chunuko",
+    "icon": "sports_kabaddi"
+  },
+  {
+    "category": "Sports",
+    "word": "Padayatra",
+    "hint": "Bato",
+    "icon": "hiking"
+  },
+  {
+    "category": "Sports",
+    "word": "Paragliding",
+    "hint": "Akash",
+    "icon": "paragliding"
+  },
+  {
+    "category": "Sports",
+    "word": "Rafting",
+    "hint": "Bhote-Koshi",
+    "icon": "kayaking"
+  },
+  {
+    "category": "Sports",
+    "word": " पर्वतारोहण",
+    "hint": "Chuchuro",
+    "icon": "terrain"
+  },
+  {
+    "category": "Sports",
+    "word": "Tirandaji",
+    "hint": "Baan",
+    "icon": "sports"
+  },
+  {
+    "category": "Sports",
+    "word": "Bungee",
+    "hint": "Jhurnuko",
+    "icon": "roller_skating"
+  },
+  {
+    "category": "Sports",
+    "word": "Cycling",
+    "hint": "Paidal",
+    "icon": "directions_bike"
+  },
+  {
+    "category": "Sports",
+    "word": "Taekwondo",
+    "hint": "Choti",
+    "icon": "sports_martial_arts"
+  },
+  { "category": "Sports", "word": "PauDI", "hint": "Pokhari", "icon": "pool" },
+  {
+    "category": "Sports",
+    "word": "Basketball",
+    "hint": "Kuri",
+    "icon": "sports_basketball"
+  },
+  {
+    "category": "Sports",
+    "word": "Dandibiyo",
+    "hint": "Lathi",
+    "icon": "gavel"
+  },
+  {
+    "category": "Tools",
+    "word": "Kodalo",
+    "hint": "Khannu",
+    "icon": "hardware"
+  },
+  {
+    "category": "Tools",
+    "word": "Hasiya",
+    "hint": "Katnu",
+    "icon": "agriculture"
+  },
+  {
+    "category": "Tools",
+    "word": "Phawada",
+    "hint": "Mato",
+    "icon": "handyman"
+  },
+  { "category": "Tools", "word": "Aari", "hint": "Kato", "icon": "carpenter" },
+  { "category": "Tools", "word": "Takua", "hint": "Suta", "icon": "settings" },
+  {
+    "category": "Tools",
+    "word": "Janto",
+    "hint": "Pishnu",
+    "icon": "settings"
+  },
+  {
+    "category": "Tools",
+    "word": "Naanglo",
+    "hint": "Othnu",
+    "icon": "filter_alt"
+  },
+  {
+    "category": "Tools",
+    "word": "Dalo",
+    "hint": "Bhandaran",
+    "icon": "shopping_basket"
+  },
+  {
+    "category": "Tools",
+    "word": "Okhli",
+    "hint": "Kutnu",
+    "icon": "sports_bar"
+  },
+  {
+    "category": "Tools",
+    "word": "Muslo",
+    "hint": "Pito",
+    "icon": "straighten"
+  },
+  { "category": "Tools", "word": "Sukul", "hint": "Gundri", "icon": "grid_on" },
+  {
+    "category": "Tools",
+    "word": "Halo",
+    "hint": "Jotnu",
+    "icon": "agriculture"
+  },
+  {
+    "category": "Tools",
+    "word": "Chisno",
+    "hint": "Kudnu",
+    "icon": "carpenter"
+  },
+  { "category": "Tools", "word": "Dori", "hint": "Bannu", "icon": "link" },
+  { "category": "Tools", "word": "Madani", "hint": "Mahi", "icon": "loop" },
+  {
+    "category": "Tools",
+    "word": "Khurpi",
+    "hint": "Ghas",
+    "icon": "content_cut"
+  },
+  {
+    "category": "Place",
+    "word": "Sagarmatha",
+    "hint": "Aglo",
+    "icon": "terrain"
+  },
+  {
+    "category": "Place",
+    "word": "Pokhara",
+    "hint": "Tal",
+    "icon": "landscape"
+  },
+  {
+    "category": "Place",
+    "word": "Lumbini",
+    "hint": "Janmasthal",
+    "icon": "self_improvement"
+  },
+  { "category": "Place", "word": "Chitwan", "hint": "Sauraha", "icon": "park" },
+  {
+    "category": "Place",
+    "word": "Bhaktapur",
+    "hint": "Gau",
+    "icon": "location_city"
+  },
+  {
+    "category": "Place",
+    "word": "Patan",
+    "hint": "Lalitpur",
+    "icon": "account_balance"
+  },
+  {
+    "category": "Place",
+    "word": "Mustang",
+    "hint": "Marubhumi",
+    "icon": "landscape"
+  },
+  {
+    "category": "Place",
+    "word": "Pashupati",
+    "hint": "Mandir",
+    "icon": "account_balance"
+  },
+  {
+    "category": "Place",
+    "word": "Boudha",
+    "hint": "Chorten",
+    "icon": "trip_origin"
+  },
+  {
+    "category": "Place",
+    "word": "Swayambhu",
+    "hint": "Bandar",
+    "icon": "account_balance"
+  },
+  {
+    "category": "Place",
+    "word": "Nagarkot",
+    "hint": "Gham",
+    "icon": "wb_twilight"
+  },
+  {
+    "category": "Place",
+    "word": "Annapurna",
+    "hint": "Himal",
+    "icon": "terrain"
+  },
+  { "category": "Place", "word": "Rara", "hint": "Mugu", "icon": "water" },
+  {
+    "category": "Place",
+    "word": "Ilam",
+    "hint": "Chiya",
+    "icon": "local_cafe"
+  },
+  {
+    "category": "Place",
+    "word": "Janakpur",
+    "hint": "Sita",
+    "icon": "location_city"
+  },
+  { "category": "Place", "word": "Gorkha", "hint": "Durbar", "icon": "fort" },
+  {
+    "category": "Place",
+    "word": "Dharan",
+    "hint": "Ghantaghar",
+    "icon": "watch"
+  },
+  {
+    "category": "Place",
+    "word": "Bandipur",
+    "hint": "Basti",
+    "icon": "holiday_village"
+  },
+  {
+    "category": "Place",
+    "word": "Muktinath",
+    "hint": "Dhara",
+    "icon": "shower"
+  },
+  { "category": "Place", "word": "Tilicho", "hint": "Uchai", "icon": "water" }
 ]
