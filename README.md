@@ -1,8 +1,8 @@
 # 😈 Imposter
 
-A local multiplayer social deduction game built with **React Native** and **Expo Router**, inspired by the classic "Spyfall" genre. One (or more) players are secretly assigned the role of **Imposter** — they receive only a vague hint instead of the real word. Everyone else discusses clues, and the group votes to eliminate who they think is faking it.
+A local multiplayer social deduction game built with **React Native** and **Expo Router**, inspired by the classic "Spyfall" genre. One (or more) players are secretly assigned the role of **Imposter**  they receive only a vague hint instead of the real word. Everyone else discusses clues, and the group votes to eliminate who they think is faking it.
 
-All words are rooted in **Nepali culture** — food, festivals, places, animals, tools, and more.
+All words are rooted in **Nepali culture**  food, festivals, places, animals, tools, and more.
 
 ---
 
