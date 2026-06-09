@@ -1,56 +1,157 @@
-# Welcome to your Expo app 👋
+# 😈 Imposter
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A local multiplayer social deduction game built with **React Native** and **Expo Router**, inspired by the classic "Spyfall" genre. One (or more) players are secretly assigned the role of **Imposter** — they receive only a vague hint instead of the real word. Everyone else discusses clues, and the group votes to eliminate who they think is faking it.
 
-## Get started
+All words are rooted in **Nepali culture** — food, festivals, places, animals, tools, and more.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 📲 Download
 
-2. Start the app
+[![Download on Android](https://img.shields.io/badge/Android-Download%20APK-green?style=for-the-badge&logo=android)](https://expo.dev/accounts/gauravbasnet/projects/imposter/builds/f73f5165-9661-4a20-bc7b-5a34bc5b1d46)
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 🎮 How to Play
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+1. **Pick a category** — Food, Festival, Animal, Place, Sports, Tools, or Object.
+2. **Add players** — minimum 3, no upper limit.
+3. **Choose the number of imposters** (1–3, based on player count).
+4. **Each player holds the phone privately** and press-holds the card to reveal their role:
+   - 😇 **Crewmates** see the secret word.
+   - 😈 **Imposters** see only a vague hint — they must blend in.
+5. **Everyone discusses** — give clues without making it obvious what the word is.
+6. **Vote** — each player casts a vote for who they think is the Imposter.
+7. **Result** — the most-voted player is eliminated. The game continues until the crew roots out all imposters or the imposters gain the majority.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## ✨ Features
 
-When you're ready, run:
+- 🗂 **8 Nepali-themed categories** — 120+ culturally rich words
+- 😈 **Configurable imposters** — 1, 2, or 3 based on group size
+- 🃏 **Animated flip cards** — press and hold to reveal your role privately
+- 🎨 **Unique player colors** — each player gets a distinct color every game
+- 🗳 **Voting system** — sequential voting with live vote counts and tie-breaking
+- 📊 **Vote distribution chart** — see who got what after voting
+- 🔄 **Multi-round support** — eliminated players are removed; game continues until win/loss
+- 🔁 **Play Again** — restart with same players and category
+- 📱 **Fully offline** — no internet, no accounts, no ads
 
-```bash
-npm run reset-project
+---
+
+## 🗂 Project Structure
+
+```
+app/
+├── _layout.tsx          # Root layout with Expo Router stack
+├── index.tsx            # Home screen — category selection
+├── setup.tsx            # Player setup — add/remove players, choose category
+├── game.tsx             # Game screen — card flip & role reveal
+└── voting.tsx           # Voting screen — cast votes & view results
+
+components/
+└── categoryCard.tsx     # Reusable category selection card
+
+constants/
+└── theme.ts             # App-wide color tokens
+
+data/
+└── words.json           # All words with category, hint, and icon
+
+styles/
+├── styles.ts            # Home screen styles
+├── setupStyles.ts       # Setup screen styles
+├── gameStyles.ts        # Game screen styles
+└── votingStyles.ts      # Voting screen styles
+
+global.css               # Google Fonts import (Poppins, Comic Neue, Chelsea Market)
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-### Other setup steps
+## 🛠 Tech Stack
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+| Technology            | Purpose                                |
+| --------------------- | -------------------------------------- |
+| React Native          | Cross-platform mobile UI               |
+| Expo SDK              | Build tooling, dev client, OTA updates |
+| Expo Router           | File-based navigation (Stack)          |
+| Expo Vector Icons     | Material Icons                         |
+| React Native Animated | Card flip animations                   |
+| TypeScript            | Type safety throughout                 |
 
-## Learn more
+---
 
-To learn more about developing your project with Expo, look at the following resources:
+## 🚀 Getting Started
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### Prerequisites
 
-## Join the community
+- Node.js 18+
+- Expo CLI (`npm install -g expo-cli`)
+- iOS Simulator / Android Emulator, or the **Expo Go** app on your phone
 
-Join our community of developers creating universal apps.
+### Installation
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```bash
+# 1. Clone the repository
+git clone https://github.com/Gaurav-Basnet/Imposter_Game.git
+cd imposter
+
+# 2. Install dependencies
+npm install
+
+# 3. Start the development server
+npx expo start
+```
+
+Then scan the QR code with **Expo Go** (Android) or the Camera app (iOS), or press `i` / `a` to open in a simulator.
+
+### Build for Production
+
+```bash
+# iOS
+eas build --platform ios
+
+# Android
+eas build --platform android
+```
+
+> Requires [EAS CLI](https://docs.expo.dev/build/introduction/) and an Expo account.
+
+---
+
+## 📦 Word Categories
+
+| Category    | Example Words                               |
+| ----------- | ------------------------------------------- |
+| 🍱 Food     | Momo, Gundruk, Yomari, Sel Roti, Chhurpi    |
+| 🐄 Animal   | Danphe, Kasturi, Chituwa, Chauri, Munal     |
+| 🪔 Object   | Khukuri, Dhyangro, Sarangi, Mandala, Diyo   |
+| 🎉 Festival | Dashain, Tihar, Bisket, Indrajatra, Chhath  |
+| 🏔 Place    | Sagarmatha, Lumbini, Mustang, Rara, Tilicho |
+| ⚽ Sports   | Kabaddi, Dandibiyo, Paragliding, Rafting    |
+| 🔨 Tools    | Kodalo, Hasiya, Naanglo, Okhli, Janto       |
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome! To add new words, edit `data/words.json` following the existing schema:
+
+```json
+{
+  "category": "Food",
+  "word": "YourWord",
+  "hint": "VagueHint",
+  "icon": "material-icon-name"
+}
+```
+
+Icon names must be valid [Material Icons](https://fonts.google.com/icons) identifiers supported by `@expo/vector-icons`.
+
+---
+
+## 📄 License
+
+MIT © 2025 — Feel free to fork, adapt, and share.
